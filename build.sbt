@@ -1,8 +1,8 @@
-lazy val baseName  = "ScalaWaveNet"
-lazy val baseNameL = baseName.toLowerCase
+val baseName  = "ScalaWaveNet"
+val baseNameL = baseName.toLowerCase
 
-lazy val projectVersion = "0.1.0-SNAPSHOT"
-lazy val mimaVersion    = "0.1.0"
+val projectVersion = "0.1.0-SNAPSHOT"
+val mimaVersion    = "0.1.0"
 
 lazy val buildSettings = Seq(
   name               := baseName,
@@ -18,15 +18,20 @@ lazy val buildSettings = Seq(
 
 // ---- main dependencies ----
 
-lazy val scalNetVersion   = "0.8.0"
-lazy val audioFileVersion = "1.4.6"
+val dl4jVersion       = "0.8.0"
+val audioFileVersion  = "1.4.6"
+val fileUtilVersion   = "1.1.2"
+val scoptVersion      = "3.5.0"
 
 // ---- test dependencies ----
 
 lazy val standardSettings = buildSettings ++ Seq(
   libraryDependencies ++= Seq(
-    "org.deeplearning4j" %% "scalnet"        % scalNetVersion,
-    "de.sciss"           %% "scalaaudiofile" % audioFileVersion
+    "org.deeplearning4j"  %% "scalnet"        % dl4jVersion,
+    "org.nd4j"            %% "nd4s"           % dl4jVersion,
+    "de.sciss"            %% "scalaaudiofile" % audioFileVersion,
+    "de.sciss"            %% "fileutil"       % fileUtilVersion,
+    "com.github.scopt"    %% "scopt"          % scoptVersion
   ),
   publishMavenStyle := true,
   publishArtifact in Test := false,
