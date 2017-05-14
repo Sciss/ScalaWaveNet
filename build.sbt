@@ -27,11 +27,12 @@ val scoptVersion      = "3.5.0"
 
 lazy val standardSettings = buildSettings ++ Seq(
   libraryDependencies ++= Seq(
-    "org.deeplearning4j"  %% "scalnet"        % dl4jVersion,
-    "org.nd4j"            %% "nd4s"           % dl4jVersion,
-    "de.sciss"            %% "scalaaudiofile" % audioFileVersion,
-    "de.sciss"            %% "fileutil"       % fileUtilVersion,
-    "com.github.scopt"    %% "scopt"          % scoptVersion
+    "org.deeplearning4j"  %% "scalnet"              % dl4jVersion,
+    "org.nd4j"            %% "nd4s"                 % dl4jVersion,
+    "org.nd4j"            %  "nd4j-native-platform" % dl4jVersion,  // back-end
+    "de.sciss"            %% "scalaaudiofile"       % audioFileVersion,
+    "de.sciss"            %% "fileutil"             % fileUtilVersion,
+    "com.github.scopt"    %% "scopt"                % scoptVersion
   ),
   publishMavenStyle := true,
   publishArtifact in Test := false,

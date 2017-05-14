@@ -133,6 +133,13 @@ object WaveNetModel {
       val targetOutput: INDArray = ??? // tf.reshape(targetOutput0, [-1, params.quantizationChannels])
       val prediction: INDArray = ??? // tf.reshape(rawOutput, [-1, params.quantizationChannels])
       val loss: INDArray = ???
+
+      /*
+
+      https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits
+
+       */
+
 //      tf.nn.softmax_cross_entropy_with_logits(
 //        logits = prediction,
 //        labels = targetOutput
